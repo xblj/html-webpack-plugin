@@ -26,119 +26,18 @@ webpack 的插件都是基于`tapable`实现的
 
 ## AsyncSeriesHook
 
-> 异步串行钩子，监听函数会一个一个依次执行
+> 异步并行钩子，根据注册函数顺序依次调用，不关心监听函数的返回值
 
-```js
-class AsyncSeriesHook {
-  constructor() {
-    this.taps = [];
-  }
+- [实现](./tapable/AsyncSeriesHook.js)
+- [测试用例](./test/AsyncSeriesHook.js)
 
-  /**
-   * 同步注册
-   */
-  tap(name, fn) {
-    this.taps.push({
-      type: 'sync',
-      fn,
-    });
-  }
+## AsyncSeriesWaterfallHook
 
-  /**
-   * 异步注册
-   */
-  tapAsync(name, fn) {
-    this.taps.push({
-      type: 'async',
-      fn,
-    });
-  }
+> 异步并行瀑布流钩子，根据注册函数顺序依次调用，上一个监听函数的返回值会作为下一个监听函数的入参
 
-  /**
-   * promise注册
-   */
-  tapPromise(name, fn) {
-    this.taps.push({
-      type: 'promise',
-      fn,
-    });
-  }
+- [实现](./tapable/AsyncSeriesWaterfallHook.js)
+- [测试用例](./test/AsyncSeriesWaterfallHook.js)
 
-  /**
-   * 异步回调
-   */
-  callAsync(...args) {
-    const cb = args.pop();
-    const next = index => {
-      if (index >= this.taps.length) {
-        return cb();
-      }
-      const { fn, type } = this.taps[index];
-      index++;
-      if (type === 'sync') {
-        // 同步注册的监听函数同步调用
-        fn(...args);
-        next(index);
-      } else if (type === 'async') {
-        // 异步注册的函数通过回调调用下一个监听函数
-        fn(...args, err => {
-          if (err) return cb(err);
-          next(index);
-        });
-      } else {
-        // Promise
-        fn(...args)
-          .then(() => next(index))
-          .catch(cb);
-      }
-    };
-    next(0);
-  }
+## 流程
 
-  /**
-   * 通过promise调用
-   */
-  promise(...args) {
-    return new Promise((resolve, reject) => {
-      this.callAsync(...args, err => {
-        if (err) {
-          return reject(err);
-        }
-        resolve(null);
-      });
-    });
-  }
-}
-```
-
-- 测试用例
-
-```js
-const queue = new AsyncSeriesHook(['name']);
-const id = 'async';
-queue.tap(id, function(name, cb) {
-  console.log('tap', name);
-});
-
-queue.tapPromise(id, function(name) {
-  console.log('tapPromise', name);
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve();
-    }, 2000);
-  });
-});
-
-queue.tapAsync(id, function(name, cb) {
-  console.log('tapAsync', name);
-  cb();
-});
-
-queue.promise('haha').then(res => {
-  console.log('over');
-});
-
-queue.callAsync('haha', err => {
-  console.log('over');
-});
-```
+![流程图](./images/流程图.jpg)

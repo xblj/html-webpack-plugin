@@ -1,11 +1,11 @@
+// const webpack = require('./webpack-source/webpack');
 const webpack = require('webpack');
 const config = require('./webpack.config')
 const fs = require('fs');
 
+debugger;
 const compiler = webpack(config)
 compiler.run((err, stats) => {
-  console.log(err);
-
   const statsObj = stats.toJson({
     chunks: true,
     errors: false,

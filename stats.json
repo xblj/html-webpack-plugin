@@ -1,9 +1,9 @@
 {
   "errors": [],
   "warnings": [],
-  "hash": "f1207b84a14b53c6fa11",
-  "time": 430,
-  "builtAt": 1577873770513,
+  "hash": "b138cc46699786087cd5",
+  "time": 80,
+  "builtAt": 1577891762389,
   "publicPath": "",
   "outputPath": "d:\\coding\\share\\webpack-plugins\\dist",
   "namedChunkGroups": {
@@ -12,7 +12,6 @@
         "main"
       ],
       "assets": [
-        "main.css",
         "bundle.js"
       ],
       "children": {},
@@ -42,8 +41,8 @@
           "id": "./src/async.js",
           "identifier": "d:\\coding\\share\\webpack-plugins\\src\\async.js",
           "name": "./src/async.js",
-          "index": 3,
-          "index2": 3,
+          "index": 1,
+          "index2": 1,
           "size": 22,
           "cacheable": true,
           "built": true,
@@ -103,15 +102,14 @@
       "rendered": true,
       "initial": true,
       "entry": true,
-      "size": 191,
+      "size": 118,
       "names": [
         "main"
       ],
       "files": [
-        "main.css",
         "bundle.js"
       ],
-      "hash": "b7cf9e684c1bbfa04fcf",
+      "hash": "2a2b703c11c235934862",
       "siblings": [],
       "parents": [],
       "children": [
@@ -120,56 +118,12 @@
       "childrenByOrder": {},
       "modules": [
         {
-          "id": "",
-          "identifier": "css d:\\coding\\share\\webpack-plugins\\node_modules\\css-loader\\dist\\cjs.js!d:\\coding\\share\\webpack-plugins\\src\\style.css 0",
-          "name": "css ./node_modules/css-loader/dist/cjs.js!./src/style.css",
-          "index": 2,
-          "index2": 0,
-          "size": 37,
-          "built": false,
-          "optional": false,
-          "prefetched": false,
-          "chunks": [
-            "main"
-          ],
-          "issuer": "d:\\coding\\share\\webpack-plugins\\node_modules\\mini-css-extract-plugin\\dist\\loader.js!d:\\coding\\share\\webpack-plugins\\node_modules\\css-loader\\dist\\cjs.js!d:\\coding\\share\\webpack-plugins\\src\\style.css",
-          "issuerId": "./src/style.css",
-          "issuerName": "./src/style.css",
-          "issuerPath": [
-            {
-              "id": "./src/index.js",
-              "identifier": "d:\\coding\\share\\webpack-plugins\\src\\index.js",
-              "name": "./src/index.js"
-            },
-            {
-              "id": "./src/style.css",
-              "identifier": "d:\\coding\\share\\webpack-plugins\\node_modules\\mini-css-extract-plugin\\dist\\loader.js!d:\\coding\\share\\webpack-plugins\\node_modules\\css-loader\\dist\\cjs.js!d:\\coding\\share\\webpack-plugins\\src\\style.css",
-              "name": "./src/style.css"
-            }
-          ],
-          "failed": false,
-          "errors": 0,
-          "warnings": 0,
-          "assets": [],
-          "reasons": [
-            {
-              "moduleId": "./src/style.css",
-              "moduleIdentifier": "d:\\coding\\share\\webpack-plugins\\node_modules\\mini-css-extract-plugin\\dist\\loader.js!d:\\coding\\share\\webpack-plugins\\node_modules\\css-loader\\dist\\cjs.js!d:\\coding\\share\\webpack-plugins\\src\\style.css",
-              "module": "./src/style.css",
-              "moduleName": "./src/style.css"
-            }
-          ],
-          "providedExports": null,
-          "optimizationBailout": [],
-          "depth": 2
-        },
-        {
           "id": "./src/index.js",
           "identifier": "d:\\coding\\share\\webpack-plugins\\src\\index.js",
           "name": "./src/index.js",
           "index": 0,
-          "index2": 2,
-          "size": 115,
+          "index2": 0,
+          "size": 118,
           "cacheable": true,
           "built": true,
           "optional": false,
@@ -196,54 +150,10 @@
               "loc": "main"
             }
           ],
-          "providedExports": [],
-          "optimizationBailout": [],
-          "depth": 0,
-          "source": "import './style.css'\r\n\r\nimport('./async').then(res => {\r\n  console.log(res.default);\r\n});\r\n\r\nconsole.log('haha');\r\n"
-        },
-        {
-          "id": "./src/style.css",
-          "identifier": "d:\\coding\\share\\webpack-plugins\\node_modules\\mini-css-extract-plugin\\dist\\loader.js!d:\\coding\\share\\webpack-plugins\\node_modules\\css-loader\\dist\\cjs.js!d:\\coding\\share\\webpack-plugins\\src\\style.css",
-          "name": "./src/style.css",
-          "index": 1,
-          "index2": 1,
-          "size": 39,
-          "cacheable": true,
-          "built": true,
-          "optional": false,
-          "prefetched": false,
-          "chunks": [
-            "main"
-          ],
-          "issuer": "d:\\coding\\share\\webpack-plugins\\src\\index.js",
-          "issuerId": "./src/index.js",
-          "issuerName": "./src/index.js",
-          "issuerPath": [
-            {
-              "id": "./src/index.js",
-              "identifier": "d:\\coding\\share\\webpack-plugins\\src\\index.js",
-              "name": "./src/index.js"
-            }
-          ],
-          "failed": false,
-          "errors": 0,
-          "warnings": 0,
-          "assets": [],
-          "reasons": [
-            {
-              "moduleId": "./src/index.js",
-              "moduleIdentifier": "d:\\coding\\share\\webpack-plugins\\src\\index.js",
-              "module": "./src/index.js",
-              "moduleName": "./src/index.js",
-              "type": "harmony side effect evaluation",
-              "userRequest": "./style.css",
-              "loc": "1:0-20"
-            }
-          ],
           "providedExports": null,
           "optimizationBailout": [],
-          "depth": 1,
-          "source": "// extracted by mini-css-extract-plugin"
+          "depth": 0,
+          "source": "// import './style.css'\r\n\r\nimport('./async').then(res => {\r\n  console.log(res.default);\r\n});\r\n\r\nconsole.log('haha');\r\n"
         }
       ],
       "filteredModules": 0,
@@ -261,55 +171,11 @@
   ],
   "modules": [
     {
-      "id": "",
-      "identifier": "css d:\\coding\\share\\webpack-plugins\\node_modules\\css-loader\\dist\\cjs.js!d:\\coding\\share\\webpack-plugins\\src\\style.css 0",
-      "name": "css ./node_modules/css-loader/dist/cjs.js!./src/style.css",
-      "index": 2,
-      "index2": 0,
-      "size": 37,
-      "built": false,
-      "optional": false,
-      "prefetched": false,
-      "chunks": [
-        "main"
-      ],
-      "issuer": "d:\\coding\\share\\webpack-plugins\\node_modules\\mini-css-extract-plugin\\dist\\loader.js!d:\\coding\\share\\webpack-plugins\\node_modules\\css-loader\\dist\\cjs.js!d:\\coding\\share\\webpack-plugins\\src\\style.css",
-      "issuerId": "./src/style.css",
-      "issuerName": "./src/style.css",
-      "issuerPath": [
-        {
-          "id": "./src/index.js",
-          "identifier": "d:\\coding\\share\\webpack-plugins\\src\\index.js",
-          "name": "./src/index.js"
-        },
-        {
-          "id": "./src/style.css",
-          "identifier": "d:\\coding\\share\\webpack-plugins\\node_modules\\mini-css-extract-plugin\\dist\\loader.js!d:\\coding\\share\\webpack-plugins\\node_modules\\css-loader\\dist\\cjs.js!d:\\coding\\share\\webpack-plugins\\src\\style.css",
-          "name": "./src/style.css"
-        }
-      ],
-      "failed": false,
-      "errors": 0,
-      "warnings": 0,
-      "assets": [],
-      "reasons": [
-        {
-          "moduleId": "./src/style.css",
-          "moduleIdentifier": "d:\\coding\\share\\webpack-plugins\\node_modules\\mini-css-extract-plugin\\dist\\loader.js!d:\\coding\\share\\webpack-plugins\\node_modules\\css-loader\\dist\\cjs.js!d:\\coding\\share\\webpack-plugins\\src\\style.css",
-          "module": "./src/style.css",
-          "moduleName": "./src/style.css"
-        }
-      ],
-      "providedExports": null,
-      "optimizationBailout": [],
-      "depth": 2
-    },
-    {
       "id": "./src/async.js",
       "identifier": "d:\\coding\\share\\webpack-plugins\\src\\async.js",
       "name": "./src/async.js",
-      "index": 3,
-      "index2": 3,
+      "index": 1,
+      "index2": 1,
       "size": 22,
       "cacheable": true,
       "built": true,
@@ -355,8 +221,8 @@
       "identifier": "d:\\coding\\share\\webpack-plugins\\src\\index.js",
       "name": "./src/index.js",
       "index": 0,
-      "index2": 2,
-      "size": 115,
+      "index2": 0,
+      "size": 118,
       "cacheable": true,
       "built": true,
       "optional": false,
@@ -383,54 +249,10 @@
           "loc": "main"
         }
       ],
-      "providedExports": [],
-      "optimizationBailout": [],
-      "depth": 0,
-      "source": "import './style.css'\r\n\r\nimport('./async').then(res => {\r\n  console.log(res.default);\r\n});\r\n\r\nconsole.log('haha');\r\n"
-    },
-    {
-      "id": "./src/style.css",
-      "identifier": "d:\\coding\\share\\webpack-plugins\\node_modules\\mini-css-extract-plugin\\dist\\loader.js!d:\\coding\\share\\webpack-plugins\\node_modules\\css-loader\\dist\\cjs.js!d:\\coding\\share\\webpack-plugins\\src\\style.css",
-      "name": "./src/style.css",
-      "index": 1,
-      "index2": 1,
-      "size": 39,
-      "cacheable": true,
-      "built": true,
-      "optional": false,
-      "prefetched": false,
-      "chunks": [
-        "main"
-      ],
-      "issuer": "d:\\coding\\share\\webpack-plugins\\src\\index.js",
-      "issuerId": "./src/index.js",
-      "issuerName": "./src/index.js",
-      "issuerPath": [
-        {
-          "id": "./src/index.js",
-          "identifier": "d:\\coding\\share\\webpack-plugins\\src\\index.js",
-          "name": "./src/index.js"
-        }
-      ],
-      "failed": false,
-      "errors": 0,
-      "warnings": 0,
-      "assets": [],
-      "reasons": [
-        {
-          "moduleId": "./src/index.js",
-          "moduleIdentifier": "d:\\coding\\share\\webpack-plugins\\src\\index.js",
-          "module": "./src/index.js",
-          "moduleName": "./src/index.js",
-          "type": "harmony side effect evaluation",
-          "userRequest": "./style.css",
-          "loc": "1:0-20"
-        }
-      ],
       "providedExports": null,
       "optimizationBailout": [],
-      "depth": 1,
-      "source": "// extracted by mini-css-extract-plugin"
+      "depth": 0,
+      "source": "// import './style.css'\r\n\r\nimport('./async').then(res => {\r\n  console.log(res.default);\r\n});\r\n\r\nconsole.log('haha');\r\n"
     }
   ],
   "filteredModules": 0

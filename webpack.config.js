@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('./plugins/html-webpack-plugin3')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const AutoExternalWebpackPlugin = require('./plugins/auto-external-webpack-plugin')
+const FlowWebpackPlugin = require('./plugins/flow-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -15,8 +16,9 @@ module.exports = {
     contentBase: 'dist'
   },
   plugins: [
-    new HtmlWebpackPlugin(),
-    new MiniCssExtractPlugin(),
+    // new FlowWebpackPlugin(),
+    // new HtmlWebpackPlugin(),
+    // new MiniCssExtractPlugin(),
     // new AutoExternalWebpackPlugin({
     //   react: {
     //     variable: 'React',
