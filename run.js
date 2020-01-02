@@ -1,12 +1,11 @@
-// const webpack = require('./webpack-source/webpack');
 const webpack = require('webpack');
-const config = require('./webpack.config')
+const config = require('./webpack.config');
 const fs = require('fs');
 
 debugger;
-const compiler = webpack(config)
+const compiler = webpack(config);
 compiler.run((err, stats) => {
-  const statsObj = stats.toJson({
+  const filterObj = {
     chunks: true,
     errors: false,
     warnings: false,
@@ -15,7 +14,13 @@ compiler.run((err, stats) => {
     logging: false,
     assetsByChunkName: false,
     assets: false,
-    entrypoints: false
-  })
-  fs.writeFileSync('stats.json', JSON.stringify(statsObj, undefined, 2), 'utf8')
-})
+    entrypoints: false,
+  };
+  // 可以指定输出哪些属性
+  const statsObj = stats.toJson(filterObj);
+  fs.writeFileSync(
+    'stats.json',
+    JSON.stringify(statsObj, undefined, 2),
+    'utf8'
+  );
+});

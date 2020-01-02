@@ -1,17 +1,18 @@
 {
   "errors": [],
   "warnings": [],
-  "hash": "b138cc46699786087cd5",
-  "time": 80,
-  "builtAt": 1577891762389,
+  "hash": "9c44d42cd2f7526ade07",
+  "time": 185,
+  "builtAt": 1577949366223,
   "publicPath": "",
-  "outputPath": "d:\\coding\\share\\webpack-plugins\\dist",
+  "outputPath": "/Users/xiebing/learn/share/html-webpack-plugin/dist",
   "namedChunkGroups": {
     "main": {
       "chunks": [
         "main"
       ],
       "assets": [
+        "main.css",
         "bundle.js"
       ],
       "children": {},
@@ -24,12 +25,12 @@
       "rendered": true,
       "initial": false,
       "entry": false,
-      "size": 22,
+      "size": 24,
       "names": [],
       "files": [
         "0.bundle.js"
       ],
-      "hash": "3ad683a587f2e122485c",
+      "hash": "87b6c7a6dfb498e35c69",
       "siblings": [],
       "parents": [
         "main"
@@ -39,11 +40,11 @@
       "modules": [
         {
           "id": "./src/async.js",
-          "identifier": "d:\\coding\\share\\webpack-plugins\\src\\async.js",
+          "identifier": "/Users/xiebing/learn/share/html-webpack-plugin/src/async.js",
           "name": "./src/async.js",
-          "index": 1,
-          "index2": 1,
-          "size": 22,
+          "index": 4,
+          "index2": 4,
+          "size": 24,
           "cacheable": true,
           "built": true,
           "optional": false,
@@ -51,13 +52,13 @@
           "chunks": [
             0
           ],
-          "issuer": "d:\\coding\\share\\webpack-plugins\\src\\index.js",
+          "issuer": "/Users/xiebing/learn/share/html-webpack-plugin/src/index.js",
           "issuerId": "./src/index.js",
           "issuerName": "./src/index.js",
           "issuerPath": [
             {
               "id": "./src/index.js",
-              "identifier": "d:\\coding\\share\\webpack-plugins\\src\\index.js",
+              "identifier": "/Users/xiebing/learn/share/html-webpack-plugin/src/index.js",
               "name": "./src/index.js"
             }
           ],
@@ -68,12 +69,12 @@
           "reasons": [
             {
               "moduleId": "./src/index.js",
-              "moduleIdentifier": "d:\\coding\\share\\webpack-plugins\\src\\index.js",
+              "moduleIdentifier": "/Users/xiebing/learn/share/html-webpack-plugin/src/index.js",
               "module": "./src/index.js",
               "moduleName": "./src/index.js",
               "type": "import()",
               "userRequest": "./async",
-              "loc": "3:0-17"
+              "loc": "4:0-17"
             }
           ],
           "providedExports": [
@@ -81,17 +82,17 @@
           ],
           "optimizationBailout": [],
           "depth": 1,
-          "source": "export default 'async'"
+          "source": "export default 'async';\n"
         }
       ],
       "filteredModules": 0,
       "origins": [
         {
           "moduleId": "./src/index.js",
-          "module": "d:\\coding\\share\\webpack-plugins\\src\\index.js",
-          "moduleIdentifier": "d:\\coding\\share\\webpack-plugins\\src\\index.js",
+          "module": "/Users/xiebing/learn/share/html-webpack-plugin/src/index.js",
+          "moduleIdentifier": "/Users/xiebing/learn/share/html-webpack-plugin/src/index.js",
           "moduleName": "./src/index.js",
-          "loc": "3:0-17",
+          "loc": "4:0-17",
           "request": "./async",
           "reasons": []
         }
@@ -102,14 +103,15 @@
       "rendered": true,
       "initial": true,
       "entry": true,
-      "size": 118,
+      "size": 243,
       "names": [
         "main"
       ],
       "files": [
+        "main.css",
         "bundle.js"
       ],
-      "hash": "2a2b703c11c235934862",
+      "hash": "78eeabfa8aead6cfc503",
       "siblings": [],
       "parents": [],
       "children": [
@@ -118,12 +120,56 @@
       "childrenByOrder": {},
       "modules": [
         {
+          "id": "",
+          "identifier": "css /Users/xiebing/learn/share/html-webpack-plugin/node_modules/css-loader/dist/cjs.js!/Users/xiebing/learn/share/html-webpack-plugin/src/style.css 0",
+          "name": "css ./node_modules/css-loader/dist/cjs.js!./src/style.css",
+          "index": 3,
+          "index2": 1,
+          "size": 34,
+          "built": false,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            "main"
+          ],
+          "issuer": "/Users/xiebing/learn/share/html-webpack-plugin/node_modules/mini-css-extract-plugin/dist/loader.js!/Users/xiebing/learn/share/html-webpack-plugin/node_modules/css-loader/dist/cjs.js!/Users/xiebing/learn/share/html-webpack-plugin/src/style.css",
+          "issuerId": "./src/style.css",
+          "issuerName": "./src/style.css",
+          "issuerPath": [
+            {
+              "id": "./src/index.js",
+              "identifier": "/Users/xiebing/learn/share/html-webpack-plugin/src/index.js",
+              "name": "./src/index.js"
+            },
+            {
+              "id": "./src/style.css",
+              "identifier": "/Users/xiebing/learn/share/html-webpack-plugin/node_modules/mini-css-extract-plugin/dist/loader.js!/Users/xiebing/learn/share/html-webpack-plugin/node_modules/css-loader/dist/cjs.js!/Users/xiebing/learn/share/html-webpack-plugin/src/style.css",
+              "name": "./src/style.css"
+            }
+          ],
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": "./src/style.css",
+              "moduleIdentifier": "/Users/xiebing/learn/share/html-webpack-plugin/node_modules/mini-css-extract-plugin/dist/loader.js!/Users/xiebing/learn/share/html-webpack-plugin/node_modules/css-loader/dist/cjs.js!/Users/xiebing/learn/share/html-webpack-plugin/src/style.css",
+              "module": "./src/style.css",
+              "moduleName": "./src/style.css"
+            }
+          ],
+          "providedExports": null,
+          "optimizationBailout": [],
+          "depth": 2
+        },
+        {
           "id": "./src/index.js",
-          "identifier": "d:\\coding\\share\\webpack-plugins\\src\\index.js",
+          "identifier": "/Users/xiebing/learn/share/html-webpack-plugin/src/index.js",
           "name": "./src/index.js",
           "index": 0,
-          "index2": 0,
-          "size": 118,
+          "index2": 3,
+          "size": 128,
           "cacheable": true,
           "built": true,
           "optional": false,
@@ -150,10 +196,105 @@
               "loc": "main"
             }
           ],
-          "providedExports": null,
+          "providedExports": [],
           "optimizationBailout": [],
           "depth": 0,
-          "source": "// import './style.css'\r\n\r\nimport('./async').then(res => {\r\n  console.log(res.default);\r\n});\r\n\r\nconsole.log('haha');\r\n"
+          "source": "import $ from 'jquery';\nimport './style.css';\n\nimport('./async').then(res => {\n  console.log(res.default);\n});\n\nconsole.log($);\n"
+        },
+        {
+          "id": "./src/style.css",
+          "identifier": "/Users/xiebing/learn/share/html-webpack-plugin/node_modules/mini-css-extract-plugin/dist/loader.js!/Users/xiebing/learn/share/html-webpack-plugin/node_modules/css-loader/dist/cjs.js!/Users/xiebing/learn/share/html-webpack-plugin/src/style.css",
+          "name": "./src/style.css",
+          "index": 2,
+          "index2": 2,
+          "size": 39,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            "main"
+          ],
+          "issuer": "/Users/xiebing/learn/share/html-webpack-plugin/src/index.js",
+          "issuerId": "./src/index.js",
+          "issuerName": "./src/index.js",
+          "issuerPath": [
+            {
+              "id": "./src/index.js",
+              "identifier": "/Users/xiebing/learn/share/html-webpack-plugin/src/index.js",
+              "name": "./src/index.js"
+            }
+          ],
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": "./src/index.js",
+              "moduleIdentifier": "/Users/xiebing/learn/share/html-webpack-plugin/src/index.js",
+              "module": "./src/index.js",
+              "moduleName": "./src/index.js",
+              "type": "harmony side effect evaluation",
+              "userRequest": "./style.css",
+              "loc": "2:0-21"
+            }
+          ],
+          "providedExports": null,
+          "optimizationBailout": [],
+          "depth": 1,
+          "source": "// extracted by mini-css-extract-plugin"
+        },
+        {
+          "id": "jquery",
+          "identifier": "external \"jQuery\"",
+          "name": "external \"jQuery\"",
+          "index": 1,
+          "index2": 0,
+          "size": 42,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            "main"
+          ],
+          "issuer": "/Users/xiebing/learn/share/html-webpack-plugin/src/index.js",
+          "issuerId": "./src/index.js",
+          "issuerName": "./src/index.js",
+          "issuerPath": [
+            {
+              "id": "./src/index.js",
+              "identifier": "/Users/xiebing/learn/share/html-webpack-plugin/src/index.js",
+              "name": "./src/index.js"
+            }
+          ],
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": "./src/index.js",
+              "moduleIdentifier": "/Users/xiebing/learn/share/html-webpack-plugin/src/index.js",
+              "module": "./src/index.js",
+              "moduleName": "./src/index.js",
+              "type": "harmony side effect evaluation",
+              "userRequest": "jquery",
+              "loc": "1:0-23"
+            },
+            {
+              "moduleId": "./src/index.js",
+              "moduleIdentifier": "/Users/xiebing/learn/share/html-webpack-plugin/src/index.js",
+              "module": "./src/index.js",
+              "moduleName": "./src/index.js",
+              "type": "harmony import specifier",
+              "userRequest": "jquery",
+              "loc": "8:12-13"
+            }
+          ],
+          "providedExports": null,
+          "optimizationBailout": [],
+          "depth": 1
         }
       ],
       "filteredModules": 0,
@@ -171,12 +312,56 @@
   ],
   "modules": [
     {
-      "id": "./src/async.js",
-      "identifier": "d:\\coding\\share\\webpack-plugins\\src\\async.js",
-      "name": "./src/async.js",
-      "index": 1,
+      "id": "",
+      "identifier": "css /Users/xiebing/learn/share/html-webpack-plugin/node_modules/css-loader/dist/cjs.js!/Users/xiebing/learn/share/html-webpack-plugin/src/style.css 0",
+      "name": "css ./node_modules/css-loader/dist/cjs.js!./src/style.css",
+      "index": 3,
       "index2": 1,
-      "size": 22,
+      "size": 34,
+      "built": false,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        "main"
+      ],
+      "issuer": "/Users/xiebing/learn/share/html-webpack-plugin/node_modules/mini-css-extract-plugin/dist/loader.js!/Users/xiebing/learn/share/html-webpack-plugin/node_modules/css-loader/dist/cjs.js!/Users/xiebing/learn/share/html-webpack-plugin/src/style.css",
+      "issuerId": "./src/style.css",
+      "issuerName": "./src/style.css",
+      "issuerPath": [
+        {
+          "id": "./src/index.js",
+          "identifier": "/Users/xiebing/learn/share/html-webpack-plugin/src/index.js",
+          "name": "./src/index.js"
+        },
+        {
+          "id": "./src/style.css",
+          "identifier": "/Users/xiebing/learn/share/html-webpack-plugin/node_modules/mini-css-extract-plugin/dist/loader.js!/Users/xiebing/learn/share/html-webpack-plugin/node_modules/css-loader/dist/cjs.js!/Users/xiebing/learn/share/html-webpack-plugin/src/style.css",
+          "name": "./src/style.css"
+        }
+      ],
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "assets": [],
+      "reasons": [
+        {
+          "moduleId": "./src/style.css",
+          "moduleIdentifier": "/Users/xiebing/learn/share/html-webpack-plugin/node_modules/mini-css-extract-plugin/dist/loader.js!/Users/xiebing/learn/share/html-webpack-plugin/node_modules/css-loader/dist/cjs.js!/Users/xiebing/learn/share/html-webpack-plugin/src/style.css",
+          "module": "./src/style.css",
+          "moduleName": "./src/style.css"
+        }
+      ],
+      "providedExports": null,
+      "optimizationBailout": [],
+      "depth": 2
+    },
+    {
+      "id": "./src/async.js",
+      "identifier": "/Users/xiebing/learn/share/html-webpack-plugin/src/async.js",
+      "name": "./src/async.js",
+      "index": 4,
+      "index2": 4,
+      "size": 24,
       "cacheable": true,
       "built": true,
       "optional": false,
@@ -184,13 +369,13 @@
       "chunks": [
         0
       ],
-      "issuer": "d:\\coding\\share\\webpack-plugins\\src\\index.js",
+      "issuer": "/Users/xiebing/learn/share/html-webpack-plugin/src/index.js",
       "issuerId": "./src/index.js",
       "issuerName": "./src/index.js",
       "issuerPath": [
         {
           "id": "./src/index.js",
-          "identifier": "d:\\coding\\share\\webpack-plugins\\src\\index.js",
+          "identifier": "/Users/xiebing/learn/share/html-webpack-plugin/src/index.js",
           "name": "./src/index.js"
         }
       ],
@@ -201,12 +386,12 @@
       "reasons": [
         {
           "moduleId": "./src/index.js",
-          "moduleIdentifier": "d:\\coding\\share\\webpack-plugins\\src\\index.js",
+          "moduleIdentifier": "/Users/xiebing/learn/share/html-webpack-plugin/src/index.js",
           "module": "./src/index.js",
           "moduleName": "./src/index.js",
           "type": "import()",
           "userRequest": "./async",
-          "loc": "3:0-17"
+          "loc": "4:0-17"
         }
       ],
       "providedExports": [
@@ -214,15 +399,15 @@
       ],
       "optimizationBailout": [],
       "depth": 1,
-      "source": "export default 'async'"
+      "source": "export default 'async';\n"
     },
     {
       "id": "./src/index.js",
-      "identifier": "d:\\coding\\share\\webpack-plugins\\src\\index.js",
+      "identifier": "/Users/xiebing/learn/share/html-webpack-plugin/src/index.js",
       "name": "./src/index.js",
       "index": 0,
-      "index2": 0,
-      "size": 118,
+      "index2": 3,
+      "size": 128,
       "cacheable": true,
       "built": true,
       "optional": false,
@@ -249,10 +434,105 @@
           "loc": "main"
         }
       ],
-      "providedExports": null,
+      "providedExports": [],
       "optimizationBailout": [],
       "depth": 0,
-      "source": "// import './style.css'\r\n\r\nimport('./async').then(res => {\r\n  console.log(res.default);\r\n});\r\n\r\nconsole.log('haha');\r\n"
+      "source": "import $ from 'jquery';\nimport './style.css';\n\nimport('./async').then(res => {\n  console.log(res.default);\n});\n\nconsole.log($);\n"
+    },
+    {
+      "id": "./src/style.css",
+      "identifier": "/Users/xiebing/learn/share/html-webpack-plugin/node_modules/mini-css-extract-plugin/dist/loader.js!/Users/xiebing/learn/share/html-webpack-plugin/node_modules/css-loader/dist/cjs.js!/Users/xiebing/learn/share/html-webpack-plugin/src/style.css",
+      "name": "./src/style.css",
+      "index": 2,
+      "index2": 2,
+      "size": 39,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        "main"
+      ],
+      "issuer": "/Users/xiebing/learn/share/html-webpack-plugin/src/index.js",
+      "issuerId": "./src/index.js",
+      "issuerName": "./src/index.js",
+      "issuerPath": [
+        {
+          "id": "./src/index.js",
+          "identifier": "/Users/xiebing/learn/share/html-webpack-plugin/src/index.js",
+          "name": "./src/index.js"
+        }
+      ],
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "assets": [],
+      "reasons": [
+        {
+          "moduleId": "./src/index.js",
+          "moduleIdentifier": "/Users/xiebing/learn/share/html-webpack-plugin/src/index.js",
+          "module": "./src/index.js",
+          "moduleName": "./src/index.js",
+          "type": "harmony side effect evaluation",
+          "userRequest": "./style.css",
+          "loc": "2:0-21"
+        }
+      ],
+      "providedExports": null,
+      "optimizationBailout": [],
+      "depth": 1,
+      "source": "// extracted by mini-css-extract-plugin"
+    },
+    {
+      "id": "jquery",
+      "identifier": "external \"jQuery\"",
+      "name": "external \"jQuery\"",
+      "index": 1,
+      "index2": 0,
+      "size": 42,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        "main"
+      ],
+      "issuer": "/Users/xiebing/learn/share/html-webpack-plugin/src/index.js",
+      "issuerId": "./src/index.js",
+      "issuerName": "./src/index.js",
+      "issuerPath": [
+        {
+          "id": "./src/index.js",
+          "identifier": "/Users/xiebing/learn/share/html-webpack-plugin/src/index.js",
+          "name": "./src/index.js"
+        }
+      ],
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "assets": [],
+      "reasons": [
+        {
+          "moduleId": "./src/index.js",
+          "moduleIdentifier": "/Users/xiebing/learn/share/html-webpack-plugin/src/index.js",
+          "module": "./src/index.js",
+          "moduleName": "./src/index.js",
+          "type": "harmony side effect evaluation",
+          "userRequest": "jquery",
+          "loc": "1:0-23"
+        },
+        {
+          "moduleId": "./src/index.js",
+          "moduleIdentifier": "/Users/xiebing/learn/share/html-webpack-plugin/src/index.js",
+          "module": "./src/index.js",
+          "moduleName": "./src/index.js",
+          "type": "harmony import specifier",
+          "userRequest": "jquery",
+          "loc": "8:12-13"
+        }
+      ],
+      "providedExports": null,
+      "optimizationBailout": [],
+      "depth": 1
     }
   ],
   "filteredModules": 0

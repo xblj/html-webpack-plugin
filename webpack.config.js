@@ -1,7 +1,7 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('./plugins/html-webpack-plugin3')
+const HtmlWebpackPlugin = require('./plugins/html-webpack-plugin3');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const AutoExternalWebpackPlugin = require('./plugins/auto-external-webpack-plugin')
+const AutoExternalWebpackPlugin = require('./plugins/auto-external-webpack-plugin');
 const FlowWebpackPlugin = require('./plugins/flow-webpack-plugin');
 
 module.exports = {
@@ -10,25 +10,21 @@ module.exports = {
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
   devServer: {
-    contentBase: 'dist'
+    contentBase: 'dist',
   },
   plugins: [
-    // new FlowWebpackPlugin(),
-    // new HtmlWebpackPlugin(),
-    // new MiniCssExtractPlugin(),
-    // new AutoExternalWebpackPlugin({
-    //   react: {
-    //     variable: 'React',
-    //     src: 'http://react.com',
-    //   },
-    //   'react-dom': {
-    //     variable: 'ReactDOM',
-    //     src: 'http://react-dom.com'
-    //   }
-    // })
+    new FlowWebpackPlugin(),
+    new HtmlWebpackPlugin(),
+    new MiniCssExtractPlugin(),
+    new AutoExternalWebpackPlugin({
+      jquery: {
+        variable: 'jQuery',
+        src: 'https://cdn.bootcss.com/jquery/3.4.1/jquery.js',
+      },
+    }),
   ],
   module: {
     rules: [
@@ -37,9 +33,9 @@ module.exports = {
         use: [
           // 'style-loader',
           MiniCssExtractPlugin.loader,
-          'css-loader'
-        ]
-      }
-    ]
-  }
-}
+          'css-loader',
+        ],
+      },
+    ],
+  },
+};
