@@ -244,7 +244,7 @@ console.log(jquery__WEBPACK_IMPORTED_MODULE_0___default.a);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-(function() { module.exports = this["jQuery"]; }());
+module.exports = jQuery;
 
 /***/ })
 

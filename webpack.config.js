@@ -1,5 +1,5 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('./plugins/html-webpack-plugin3');
+const HtmlWebpackPlugin = require('./plugins/html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const AutoExternalWebpackPlugin = require('./plugins/auto-external-webpack-plugin');
 const FlowWebpackPlugin = require('./plugins/flow-webpack-plugin');
@@ -16,6 +16,7 @@ module.exports = {
     contentBase: 'dist',
   },
   plugins: [
+    // 打印compiler和compilation上的所有钩子调用顺序
     new FlowWebpackPlugin(),
     new HtmlWebpackPlugin(),
     new MiniCssExtractPlugin(),

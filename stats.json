@@ -1,9 +1,9 @@
 {
   "errors": [],
   "warnings": [],
-  "hash": "9c44d42cd2f7526ade07",
-  "time": 185,
-  "builtAt": 1577949366223,
+  "hash": "3cfbf3e9f3f459bf5491",
+  "time": 11574,
+  "builtAt": 1577951065303,
   "publicPath": "",
   "outputPath": "/Users/xiebing/learn/share/html-webpack-plugin/dist",
   "namedChunkGroups": {
@@ -111,7 +111,7 @@
         "main.css",
         "bundle.js"
       ],
-      "hash": "78eeabfa8aead6cfc503",
+      "hash": "47fc4342853fd6d12bc7",
       "siblings": [],
       "parents": [],
       "children": [
