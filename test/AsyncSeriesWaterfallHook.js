@@ -1,13 +1,13 @@
-const { AsyncSeriesWaterfallHook } = require('tapable')
+const { AsyncSeriesWaterfallHook } = require('tapable');
 // const { AsyncSeriesWaterfallHook } = require('../tapable')
 
 let queue = new AsyncSeriesWaterfallHook(['name', 'age']);
 console.time('cost');
 
 // 测试同步
-queue.tap('1', function (name, age) {
+queue.tap('1', function(name, age) {
   console.log(1, name, age);
-  return 'return1';
+  return 'res:1';
 });
 // queue.tap('2', function (data, age) {
 //   console.log(2, data, age);
@@ -29,12 +29,11 @@ queue.tap('1', function (name, age) {
 //   }, 1000)
 // });
 
-
-queue.tapAsync('2', function (data, age, callback) {
-  setTimeout(function () {
+queue.tapAsync('2', function(data, age, callback) {
+  setTimeout(function() {
     console.log(2, data, age);
-    callback(null, 2);
-  }, 2000)
+    callback(null, 'res:2');
+  }, 2000);
 });
 // queue.tapAsync('3', function (data, age, callback) {
 //   setTimeout(function () {
@@ -64,14 +63,16 @@ queue.tapAsync('2', function (data, age, callback) {
 //     }, 2000);
 //   });
 // });
-queue.tapPromise('3', function (data) {
-  return new Promise(function (resolve) {
-    setTimeout(function () {
-      console.log(data, 3);
+queue.tapPromise('3', function(data) {
+  return new Promise(function(resolve) {
+    setTimeout(function() {
+      console.log(data, 'res:3');
       resolve(3);
     }, 3000);
   });
 });
-queue.promise('med', 5).then(err => {
+
+queue.promise('med', 5).then(res => {
+  console.log('finally res:', res);
   console.timeEnd('cost');
 });

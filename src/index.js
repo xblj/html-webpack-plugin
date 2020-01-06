@@ -1,8 +1,21 @@
 import $ from 'jquery';
 import './style.css';
 
-import('./async').then(res => {
-  console.log(res.default);
-});
+// const btn = document.createElement('button');
+// btn.innerText = '点我';
 
-console.log($);
+// btn.onclick = function() {
+//   import('./async').then(res => {
+//     console.log(res.default);
+//   });
+// };
+
+// document.body.append(btn);
+
+const btn = $('<button>点我</button>');
+btn.click(function() {
+  import('./async').then(res => {
+    console.log(res.default);
+  });
+});
+$('body').append(btn);

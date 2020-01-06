@@ -41,7 +41,7 @@ class SingleEntryPlugin {
 			"SingleEntryPlugin",
 			(compilation, callback) => {
 				const { entry, name, context } = this;
-
+        debugger // 从入口开始编译
 				const dep = SingleEntryPlugin.createDependency(entry, name);
 				compilation.addEntry(context, dep, name, callback);
 			}

@@ -140,7 +140,7 @@ class NormalModuleFactory extends Tapable {
 
 					// Ignored
 					if (!result) return callback();
-
+          debugger
 					let createdModule = this.hooks.createModule.call(result);
 					if (!createdModule) {
 						if (!result.request) {

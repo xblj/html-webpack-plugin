@@ -36,14 +36,14 @@ const webpack = (options, callback) => {
       Array.from(options).map(options => webpack(options))
     );
   } else if (typeof options === "object") {
-    options = new WebpackOptionsDefaulter().process(options);
+    options = new WebpackOptionsDefaulter().process(options); 
 
     compiler = new Compiler(options.context); debugger
     compiler.options = options;
     new NodeEnvironmentPlugin({
       infrastructureLogging: options.infrastructureLogging
-    }).apply(compiler);
-    if (options.plugins && Array.isArray(options.plugins)) {
+    }).apply(compiler);// 设置输出文件系统
+    if (options.plugins && Array.isArray(options.plugins)) {// 调用webpack.config.js里面的plugins
       for (const plugin of options.plugins) {
         if (typeof plugin === "function") {
           plugin.call(compiler, compiler);
@@ -71,7 +71,7 @@ const webpack = (options, callback) => {
         : options.watchOptions || {};
       return compiler.watch(watchOptions, callback);
     }
-    compiler.run(callback);
+    compiler.run(callback);// 开始编译
   }
   return compiler;
 };

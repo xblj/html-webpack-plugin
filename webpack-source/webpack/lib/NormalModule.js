@@ -291,7 +291,7 @@ class NormalModule extends Module {
 			compilation,
 			fs
 		);
-
+     debugger
 		runLoaders(
 			{
 				resource: this.resource,

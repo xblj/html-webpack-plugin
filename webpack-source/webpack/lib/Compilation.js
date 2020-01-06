@@ -1033,7 +1033,7 @@ class Compilation extends Tapable {
 	_addModuleChain(context, dependency, onModule, callback) {
 		const start = this.profile && Date.now();
 		const currentProfile = this.profile && {};
-
+    debugger
 		const errorAndCallback = this.bail
 			? err => {
 					callback(err);
@@ -1141,7 +1141,7 @@ class Compilation extends Tapable {
 	 */
 	addEntry(context, entry, name, callback) {
 		this.hooks.addEntry.call(entry, name);
-
+    debugger
 		const slot = {
 			name: name,
 			// TODO webpack 5 remove `request`

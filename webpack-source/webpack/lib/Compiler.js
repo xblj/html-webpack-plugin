@@ -246,7 +246,7 @@ class Compiler extends Tapable {
 
   run(callback) {
     if (this.running) return callback(new ConcurrentCompilationError());
-
+    debugger
     const finalCallback = (err, stats) => {
       this.running = false;
 
@@ -317,7 +317,7 @@ class Compiler extends Tapable {
 
         this.readRecords(err => {
           if (err) return finalCallback(err);
-
+          debugger
           this.compile(onCompiled);
         });
       });
@@ -658,7 +658,7 @@ class Compiler extends Tapable {
   }
 
   compile(callback) {
-    const params = this.newCompilationParams();
+    const params = this.newCompilationParams();// 创建compilation参数
     this.hooks.beforeCompile.callAsync(params, err => {
       if (err) return callback(err);
 

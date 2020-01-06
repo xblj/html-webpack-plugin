@@ -1,49 +1,116 @@
-const fs = require('fs');
 const path = require('path');
 const cheerio = require('cheerio');
 const { SyncWaterfallHook } = require('../../tapable');
+const childCompiler = require('./lib/compiler');
 
 const PLUGIN_ID = 'HtmlWebpackPlugin';
 class HtmlWebpackPlugin {
+  constructor(options = {}) {
+    this.options = {
+      template: path.join(__dirname, './template.html'),
+      filename: 'index.html',
+      ...options
+    };
+  }
+
   apply(compiler) {
+    let compilationPromise;
+    this.options.template = this.getFullTemplatePath(
+      this.options.template,
+      compiler.context
+    );
     compiler.hooks.compilation.tap(PLUGIN_ID, compilation => {
       compilation.hooks.htmlWebpackPluginAlterAssetTags = new SyncWaterfallHook(
         ['assetTags']
       );
     });
 
-    //异步钩子，但是我们的逻辑没有异步操作的话，可以直接写成同步调用
-    compiler.hooks.emit.tap(PLUGIN_ID, compilation => {
+    compiler.hooks.make.tapAsync(PLUGIN_ID, (compilation, callback) => {
+      compilationPromise = childCompiler
+        .compileTemplate(
+          this.options.template,
+          compiler.context,
+          this.options.filename,
+          compilation
+        )
+        .then(compilationResult => {
+          this.childCompilerHash = compilationResult.hash;
+          this.childCompilationOutputName = compilationResult.outputName;
+          callback();
+          // 编译之后的代码
+          return compilationResult.content;
+        });
+    });
+
+    compiler.hooks.emit.tapAsync(PLUGIN_ID, (compilation, callback) => {
+      // const applyPluginsAsyncWaterfall = this.applyPluginsAsyncWaterfall(
+      //   compilation
+      // );
+
       let { chunks } = compilation.getStats().toJson();
       // 过滤不需要写入html文件中的chunk
       chunks = this.filterChunks(chunks);
 
-      // 根据过滤后的chunks组装对应的css和js资源
+      // 根据过滤后的chunks组装对应的css和js资源:30
       const assets = this.htmlWebpackPluginAssets(chunks);
 
-      // 获取html摸板内容
-      const temp = fs.readFileSync(
-        path.resolve(__dirname, 'template.ejs'),
-        'utf8'
-      );
+      (async () => {
+        // 等待子编译完成
+        let compiledTemplate = await compilationPromise;
+        // 直接返回html文件，省略
+        let compilationResult = this.evaluateCompilationResult(
+          compilation,
+          compiledTemplate
+        );
 
-      // 根据资源生成要插入到html文件中的标签
-      let assetTags = this.generateHtmlTags(assets);
-      assetTags = compilation.hooks.htmlWebpackPluginAlterAssetTags.call(
-        assetTags
-      );
-      console.log(assetTags);
+        // 执行模板函数，替换模板中的变量
+        let html = this.executeTemplate(
+          compilationResult,
+          chunks,
+          assets,
+          compilation
+        );
 
-      // 将标签插入到html中
-      const html = this.injectAssetTagsIntoHtml(temp, assetTags);
-      console.log(compilation.assets);
+        // 根据资源生成要插入到html文件中的标签
+        let assetTags = this.generateHtmlTags(assets);
 
-      // 将需要输出到文件系统的添加到assets上
-      compilation.assets['index.html'] = {
-        source: () => html,
-        size: () => html.length,
-      };
+        // 将标签插入到html中
+        html = this.injectAssetTagsIntoHtml(html, assetTags);
+
+        // 将需要输出到文件系统的添加到assets上
+        compilation.assets[this.childCompilationOutputName] = {
+          source: () => html,
+          size: () => html.length
+        };
+
+        callback();
+      })();
     });
+  }
+
+  getTemplateParameters(compilation, assets) {
+    const { templateParameters } = this.options;
+    if (typeof templateParameters === 'function') {
+      return templateParameters(compilation, assets, this.options);
+    }
+    if (typeof templateParameters === 'object') {
+      return templateParameters;
+    }
+    return {};
+  }
+
+  /**
+   * 执行模板函数，将配置里面的变量插入到html中
+   */
+  executeTemplate(templateFunction, chunks, assets, compilation) {
+    const templateParams = this.getTemplateParameters(compilation, assets);
+    const html = templateFunction(templateParams);
+    return html;
+  }
+
+  evaluateCompilationResult(compilation, source) {
+    source = source.replace('var HTML_WEBPACK_PLUGIN_RESULT =', '');
+    return eval(source);
   }
 
   injectAssetTagsIntoHtml(html, assetTags) {
@@ -77,8 +144,8 @@ class HtmlWebpackPlugin {
         selfClose: true,
         attributes: {
           href: stylePath,
-          rel: 'stylesheet',
-        },
+          rel: 'stylesheet'
+        }
       };
     });
 
@@ -88,33 +155,34 @@ class HtmlWebpackPlugin {
         selfClose: false,
         attributes: {
           src: scriptPath,
-          type: 'text/javascript',
-        },
+          type: 'text/javascript'
+        }
       };
     });
 
     return {
       head,
-      body,
+      body
     };
   }
 
   htmlWebpackPluginAssets(chunks) {
     const assets = {
       js: [],
-      css: [],
+      css: []
     };
 
     chunks.forEach(chunk => {
       const { files } = chunk;
-      const js = files.find(file => /\.js$/.test(file));
-      const css = files.filter(file => /.css$/.test(file));
-      if (js) {
-        assets.js.push(js);
+      const filterFile = reg => file => reg.test(file);
+      const js = files.filter(filterFile(/\.js$/));
+      const css = files.filter(filterFile(/\.css$/));
+      if (js.length) {
+        assets.js.push(...js);
       }
 
       if (css.length) {
-        assets.css.push(css);
+        assets.css.push(...css);
       }
     });
     return assets;
@@ -124,11 +192,33 @@ class HtmlWebpackPlugin {
     return chunks.filter(chunk => {
       const {
         names: [chunkName],
-        initial,
+        initial
       } = chunk;
       if (!chunkName || !initial) return false;
       return true;
     });
+  }
+
+  getFullTemplatePath(template, context) {
+    if (template.indexOf('!') === -1) {
+      // 若果没有设置加载模板的loader，那么就使用默认的loader
+      template = `${require.resolve('./lib/loader.js')}!${path.resolve(
+        context,
+        template
+      )}`;
+    }
+    // 将相对路径修改为绝对路径
+    return template.replace(
+      /([!])([^/\\][^!?]+|[^/\\!?])($|\?[^!?\n]+$)/,
+      (match, prefix, filepath, postfix) =>
+        prefix + path.resolve(filepath) + postfix
+    );
+  }
+
+  applyPluginsAsyncWaterfall(compilation) {
+    return (eventName, requiresResult, pluginArgs) => {
+      return compilation.hooks[eventName].promise(pluginArgs);
+    };
   }
 }
 

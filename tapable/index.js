@@ -5,5 +5,5 @@ const SyncWaterfallHook = require('./SyncWaterfallHook');
 module.exports = {
   AsyncSeriesHook,
   AsyncSeriesWaterfallHook,
-  SyncWaterfallHook,
+  SyncWaterfallHook
 };
