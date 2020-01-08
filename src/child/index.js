@@ -1,6 +1,5 @@
-
 const btn = document.createElement('button');
-btn.innerText = '点我';
+btn.innerText = '点我2';
 
 btn.onclick = function() {
   import('./async').then(res => {
@@ -9,4 +8,3 @@ btn.onclick = function() {
 };
 
 document.body.append(btn);
-

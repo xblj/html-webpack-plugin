@@ -1033,7 +1033,7 @@ class Compilation extends Tapable {
 	_addModuleChain(context, dependency, onModule, callback) {
 		const start = this.profile && Date.now();
 		const currentProfile = this.profile && {};
-    debugger
+    debugger // 添加模块链失败是否直接返回
 		const errorAndCallback = this.bail
 			? err => {
 					callback(err);
@@ -1052,14 +1052,14 @@ class Compilation extends Tapable {
 			throw new Error("Parameter 'dependency' must be a Dependency");
 		}
 		const Dep = /** @type {DepConstructor} */ (dependency.constructor);
-		const moduleFactory = this.dependencyFactories.get(Dep);
+		const moduleFactory = this.dependencyFactories.get(Dep);// 每个依赖的构造函数都对应一个模块工厂，可以通过模块工厂的create方法能创建一个模块
 		if (!moduleFactory) {
 			throw new Error(
 				`No dependency factory available for this dependency type: ${dependency.constructor.name}`
 			);
 		}
 
-		this.semaphore.acquire(() => {
+		this.semaphore.acquire(() => {// 控制并发量
 			moduleFactory.create(
 				{
 					contextInfo: {
@@ -1092,7 +1092,7 @@ class Compilation extends Tapable {
 
 					const afterBuild = () => {
 						if (addModuleResult.dependencies) {
-							this.processModuleDependencies(module, err => {
+							this.processModuleDependencies(module, err => {// 递归处理依赖
 								if (err) return callback(err);
 								callback(null, module);
 							});
@@ -1107,7 +1107,7 @@ class Compilation extends Tapable {
 						}
 					}
 
-					if (addModuleResult.build) {
+					if (addModuleResult.build) {// 如果是从缓存获取，并且不需要重新构建就是false
 						this.buildModule(module, false, null, null, err => {
 							if (err) {
 								this.semaphore.release();
@@ -1173,7 +1173,7 @@ class Compilation extends Tapable {
 					return callback(err);
 				}
 
-				if (module) {
+				if (module) {// 当配置了bail==false的时候，编译模块报错后，不回终止编译过程，这个时候module没有值
 					slot.module = module;
 				} else {
 					const idx = this._preparedEntrypoints.indexOf(slot);
@@ -1296,14 +1296,14 @@ class Compilation extends Tapable {
 		for (const preparedEntrypoint of this._preparedEntrypoints) {
 			const module = preparedEntrypoint.module;
 			const name = preparedEntrypoint.name;
-			const chunk = this.addChunk(name);
+			const chunk = this.addChunk(name); // 根据模块名称创建一个chunk
 			const entrypoint = new Entrypoint(name);
 			entrypoint.setRuntimeChunk(chunk);
 			entrypoint.addOrigin(null, name, preparedEntrypoint.request);
 			this.namedChunkGroups.set(name, entrypoint);
 			this.entrypoints.set(name, entrypoint);
 			this.chunkGroups.push(entrypoint);
-
+      // 处理相互依赖
 			GraphHelpers.connectChunkGroupAndChunk(entrypoint, chunk);
 			GraphHelpers.connectChunkAndModule(chunk, module);
 

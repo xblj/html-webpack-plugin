@@ -669,7 +669,7 @@ class Compiler extends Tapable {
       this.hooks.make.callAsync(compilation, err => {
         if (err) return callback(err);
 
-        compilation.finish(err => {
+        compilation.finish(err => { // 主要是报告各个模块的错误和警告
           if (err) return callback(err);
 
           compilation.seal(err => {

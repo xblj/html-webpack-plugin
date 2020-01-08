@@ -3,6 +3,33 @@ const cheerio = require('cheerio');
 const { SyncWaterfallHook } = require('../../tapable');
 const childCompiler = require('./lib/compiler');
 
+/**
+ * @typedef {import('webpack/lib/Compilation')} Compilation
+ */
+
+/**
+ * @typedef {import('webpack/lib/Chunk')} Chunk
+ */
+
+/**
+ * @typedef {Object} Assets
+ * @property {Array<string>} js
+ * @property {Array<string>} css
+ */
+
+/**
+ * @typedef {Object} AssetTag
+ * @property {string} tagName
+ * @property {boolean} selfClose
+ * @property {Object} attributes
+ */
+
+/**
+ * @typedef {Object} AssetTagObj
+ * @property {AssetTag} head
+ * @property {AssetTag} body
+ */
+
 const PLUGIN_ID = 'HtmlWebpackPlugin';
 class HtmlWebpackPlugin {
   constructor(options = {}) {
@@ -88,6 +115,11 @@ class HtmlWebpackPlugin {
     });
   }
 
+  /**
+   * 获取配置文件中的模板参数
+   * @param {Compilation} compilation
+   * @param {assets} assets
+   */
   getTemplateParameters(compilation, assets) {
     const { templateParameters } = this.options;
     if (typeof templateParameters === 'function') {
@@ -101,6 +133,11 @@ class HtmlWebpackPlugin {
 
   /**
    * 执行模板函数，将配置里面的变量插入到html中
+   * @param {Function} templateFunction
+   * @param {Array} chunks
+   * @param {Assets} assets
+   * @param {Compilation} compilation
+   * @returns {string} html文件内容
    */
   executeTemplate(templateFunction, chunks, assets, compilation) {
     const templateParams = this.getTemplateParameters(compilation, assets);
@@ -108,14 +145,26 @@ class HtmlWebpackPlugin {
     return html;
   }
 
+  /**
+   * 执行
+   * @param {Compilation} compilation
+   * @param {string} source 经过loader处理后的代码
+   * @returns {Function} 用于生成html文件内容的函数
+   */
   evaluateCompilationResult(compilation, source) {
     source = source.replace('var HTML_WEBPACK_PLUGIN_RESULT =', '');
+    // 源码中是在vm沙盒中运行，不是我们的学习的重点，为了简单就直接通过eval运行
     return eval(source);
   }
 
-  injectAssetTagsIntoHtml(html, assetTags) {
+  /**
+   * 将js/css资源添加到html文件模板中
+   * @param {string} temp html文件模板
+   * @param {AssetTagObj} assetTags
+   */
+  injectAssetTagsIntoHtml(temp, assetTags) {
     const { head, body } = assetTags;
-    const $ = cheerio.load(html);
+    const $ = cheerio.load(temp);
     const generateElement = item => {
       let str = `<${item.tagName}`;
       Object.keys(item.attributes).forEach(attr => {
@@ -136,6 +185,11 @@ class HtmlWebpackPlugin {
     return $.html();
   }
 
+  /**
+   * 根据资源生成插入到html文件中的标签对象
+   * @param {Assets} assets
+   * @returns {AssetTagObj}
+   */
   generateHtmlTags(assets) {
     const { js, css } = assets;
     const head = css.map(stylePath => {
@@ -166,6 +220,11 @@ class HtmlWebpackPlugin {
     };
   }
 
+  /**
+   * 筛选时出js和css文件
+   * @param {Array<Chunk>} chunks
+   * @returns {Assets}
+   */
   htmlWebpackPluginAssets(chunks) {
     const assets = {
       js: [],
@@ -188,6 +247,14 @@ class HtmlWebpackPlugin {
     return assets;
   }
 
+  /**
+   * 过滤出不需要插入到页面中的chunk
+   * @param {Array<Chunk>} chunks
+   * @returns {Array<Chunk>}
+   * @example
+   * 比如动态导入的模块不会插入到页面
+   * import('module').then(res => ...)
+   */
   filterChunks(chunks) {
     return chunks.filter(chunk => {
       const {
@@ -199,6 +266,17 @@ class HtmlWebpackPlugin {
     });
   }
 
+  /**
+   * 将模板相对路径改为绝对路径
+   * @param {string} template 相对路径
+   * @param {string} context 当前上下文
+   * @returns {string}
+   * @example
+   * 输入：
+   * 'a-loader!a-loader!path.js?query=2'
+   * 返回：
+   *  'a-loader!a-loader!c://xxx/xx/path.js?query=2';
+   */
   getFullTemplatePath(template, context) {
     if (template.indexOf('!') === -1) {
       // 若果没有设置加载模板的loader，那么就使用默认的loader
@@ -215,6 +293,10 @@ class HtmlWebpackPlugin {
     );
   }
 
+  /**
+   * 异步钩子函数触发帮助函数
+   * @param {Compilation} compilation
+   */
   applyPluginsAsyncWaterfall(compilation) {
     return (eventName, requiresResult, pluginArgs) => {
       return compilation.hooks[eventName].promise(pluginArgs);

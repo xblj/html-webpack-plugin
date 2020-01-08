@@ -1,6 +1,7 @@
 const path = require('path');
+// const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackPlugin = require('./plugins/html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+// const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 // const AutoExternalWebpackPlugin = require('./plugins/auto-external-webpack-plugin');
 // const FlowWebpackPlugin = require('./plugins/flow-webpack-plugin');
 
@@ -20,6 +21,8 @@ module.exports = {
     // new FlowWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: path.resolve('./index.html'),
+      // filename: '[hash:8].html',
+      filename: 'index.html',
       templateParameters: (compilation, assets, assetTags, options) => {
         return {
           compilation,
@@ -32,8 +35,8 @@ module.exports = {
           foo: 'bar'
         };
       }
-    }),
-    new MiniCssExtractPlugin()
+    })
+    // new MiniCssExtractPlugin()
     // new AutoExternalWebpackPlugin({
     //   jquery: {
     //     variable: 'jQuery',
@@ -46,8 +49,8 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          // 'style-loader',
-          MiniCssExtractPlugin.loader,
+          'style-loader',
+          // MiniCssExtractPlugin.loader,
           'css-loader'
         ]
       }

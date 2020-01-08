@@ -1,19 +1,14 @@
 {
-  "errors": [
-    "./src/index.js\nModule not found: Error: Can't resolve 'jquery' in '/Users/xiebing/learn/share/html-webpack-plugin/src'\nresolve 'jquery' in '/Users/xiebing/learn/share/html-webpack-plugin/src'\n  Parsed request is a module\n  using description file: /Users/xiebing/learn/share/html-webpack-plugin/package.json (relative path: ./src)\n    Field 'browser' doesn't contain a valid alias configuration\n    resolve as module\n      /Users/xiebing/learn/share/html-webpack-plugin/src/node_modules doesn't exist or is not a directory\n      /Users/xiebing/learn/share/node_modules doesn't exist or is not a directory\n      /Users/xiebing/learn/node_modules doesn't exist or is not a directory\n      /Users/xiebing/node_modules doesn't exist or is not a directory\n      /Users/node_modules doesn't exist or is not a directory\n      /node_modules doesn't exist or is not a directory\n      looking for modules in /Users/xiebing/learn/share/html-webpack-plugin/node_modules\n        using description file: /Users/xiebing/learn/share/html-webpack-plugin/package.json (relative path: ./node_modules)\n          Field 'browser' doesn't contain a valid alias configuration\n          using description file: /Users/xiebing/learn/share/html-webpack-plugin/package.json (relative path: ./node_modules/jquery)\n            no extension\n              Field 'browser' doesn't contain a valid alias configuration\n              /Users/xiebing/learn/share/html-webpack-plugin/node_modules/jquery doesn't exist\n            .wasm\n              Field 'browser' doesn't contain a valid alias configuration\n              /Users/xiebing/learn/share/html-webpack-plugin/node_modules/jquery.wasm doesn't exist\n            .mjs\n              Field 'browser' doesn't contain a valid alias configuration\n              /Users/xiebing/learn/share/html-webpack-plugin/node_modules/jquery.mjs doesn't exist\n            .js\n              Field 'browser' doesn't contain a valid alias configuration\n              /Users/xiebing/learn/share/html-webpack-plugin/node_modules/jquery.js doesn't exist\n            .json\n              Field 'browser' doesn't contain a valid alias configuration\n              /Users/xiebing/learn/share/html-webpack-plugin/node_modules/jquery.json doesn't exist\n            as directory\n              /Users/xiebing/learn/share/html-webpack-plugin/node_modules/jquery doesn't exist\n[/Users/xiebing/learn/share/html-webpack-plugin/src/node_modules]\n[/Users/xiebing/learn/share/node_modules]\n[/Users/xiebing/learn/node_modules]\n[/Users/xiebing/node_modules]\n[/Users/node_modules]\n[/node_modules]\n[/Users/xiebing/learn/share/html-webpack-plugin/node_modules/jquery]\n[/Users/xiebing/learn/share/html-webpack-plugin/node_modules/jquery.wasm]\n[/Users/xiebing/learn/share/html-webpack-plugin/node_modules/jquery.mjs]\n[/Users/xiebing/learn/share/html-webpack-plugin/node_modules/jquery.js]\n[/Users/xiebing/learn/share/html-webpack-plugin/node_modules/jquery.json]\n @ ./src/index.js 1:0-23 15:12-13 21:0-1"
-  ],
+  "errors": [],
   "warnings": [],
   "version": "4.41.5",
-  "hash": "74c55fe720a52ea003b7",
-  "time": 417,
-  "builtAt": 1578308739009,
+  "hash": "42f68ec1305252cbf1ed",
+  "time": 441,
+  "builtAt": 1578474362149,
   "publicPath": "",
   "outputPath": "/Users/xiebing/learn/share/html-webpack-plugin/dist",
   "assetsByChunkName": {
-    "main": [
-      "main.css",
-      "bundle.js"
-    ]
+    "main": "bundle.js"
   },
   "assets": [
     {
@@ -28,7 +23,7 @@
     },
     {
       "name": "bundle.js",
-      "size": 9925,
+      "size": 8758,
       "chunks": [
         "main"
       ],
@@ -40,21 +35,9 @@
     },
     {
       "name": "index.html",
-      "size": 383,
+      "size": 344,
       "chunks": [],
       "chunkNames": [],
-      "info": {},
-      "emitted": true
-    },
-    {
-      "name": "main.css",
-      "size": 35,
-      "chunks": [
-        "main"
-      ],
-      "chunkNames": [
-        "main"
-      ],
       "info": {},
       "emitted": true
     }
@@ -66,7 +49,6 @@
         "main"
       ],
       "assets": [
-        "main.css",
         "bundle.js"
       ],
       "children": {},
@@ -79,7 +61,6 @@
         "main"
       ],
       "assets": [
-        "main.css",
         "bundle.js"
       ],
       "children": {},
@@ -109,8 +90,8 @@
           "id": "./src/async.js",
           "identifier": "/Users/xiebing/learn/share/html-webpack-plugin/src/async.js",
           "name": "./src/async.js",
-          "index": 3,
-          "index2": 3,
+          "index": 1,
+          "index2": 1,
           "size": 24,
           "cacheable": true,
           "built": true,
@@ -141,7 +122,7 @@
               "moduleName": "./src/index.js",
               "type": "import()",
               "userRequest": "./async",
-              "loc": "17:2-19"
+              "loc": "6:2-19"
             }
           ],
           "providedExports": [
@@ -159,7 +140,7 @@
           "module": "/Users/xiebing/learn/share/html-webpack-plugin/src/index.js",
           "moduleIdentifier": "/Users/xiebing/learn/share/html-webpack-plugin/src/index.js",
           "moduleName": "./src/index.js",
-          "loc": "17:2-19",
+          "loc": "6:2-19",
           "request": "./async",
           "reasons": []
         }
@@ -170,15 +151,14 @@
       "rendered": true,
       "initial": true,
       "entry": true,
-      "size": 508,
+      "size": 203,
       "names": [
         "main"
       ],
       "files": [
-        "main.css",
         "bundle.js"
       ],
-      "hash": "712a8d346576721d95af",
+      "hash": "4e528d691a6c8273ff2c",
       "siblings": [],
       "parents": [],
       "children": [
@@ -187,56 +167,12 @@
       "childrenByOrder": {},
       "modules": [
         {
-          "id": "",
-          "identifier": "css /Users/xiebing/learn/share/html-webpack-plugin/node_modules/css-loader/dist/cjs.js!/Users/xiebing/learn/share/html-webpack-plugin/src/style.css 0",
-          "name": "css ./node_modules/css-loader/dist/cjs.js!./src/style.css",
-          "index": 2,
-          "index2": 0,
-          "size": 34,
-          "built": false,
-          "optional": false,
-          "prefetched": false,
-          "chunks": [
-            "main"
-          ],
-          "issuer": "/Users/xiebing/learn/share/html-webpack-plugin/node_modules/mini-css-extract-plugin/dist/loader.js!/Users/xiebing/learn/share/html-webpack-plugin/node_modules/css-loader/dist/cjs.js!/Users/xiebing/learn/share/html-webpack-plugin/src/style.css",
-          "issuerId": "./src/style.css",
-          "issuerName": "./src/style.css",
-          "issuerPath": [
-            {
-              "id": "./src/index.js",
-              "identifier": "/Users/xiebing/learn/share/html-webpack-plugin/src/index.js",
-              "name": "./src/index.js"
-            },
-            {
-              "id": "./src/style.css",
-              "identifier": "/Users/xiebing/learn/share/html-webpack-plugin/node_modules/mini-css-extract-plugin/dist/loader.js!/Users/xiebing/learn/share/html-webpack-plugin/node_modules/css-loader/dist/cjs.js!/Users/xiebing/learn/share/html-webpack-plugin/src/style.css",
-              "name": "./src/style.css"
-            }
-          ],
-          "failed": false,
-          "errors": 0,
-          "warnings": 0,
-          "assets": [],
-          "reasons": [
-            {
-              "moduleId": "./src/style.css",
-              "moduleIdentifier": "/Users/xiebing/learn/share/html-webpack-plugin/node_modules/mini-css-extract-plugin/dist/loader.js!/Users/xiebing/learn/share/html-webpack-plugin/node_modules/css-loader/dist/cjs.js!/Users/xiebing/learn/share/html-webpack-plugin/src/style.css",
-              "module": "./src/style.css",
-              "moduleName": "./src/style.css"
-            }
-          ],
-          "providedExports": null,
-          "optimizationBailout": [],
-          "depth": 2
-        },
-        {
           "id": "./src/index.js",
           "identifier": "/Users/xiebing/learn/share/html-webpack-plugin/src/index.js",
           "name": "./src/index.js",
           "index": 0,
-          "index2": 2,
-          "size": 435,
+          "index2": 0,
+          "size": 203,
           "cacheable": true,
           "built": true,
           "optional": false,
@@ -263,54 +199,10 @@
               "loc": "main"
             }
           ],
-          "providedExports": [],
-          "optimizationBailout": [],
-          "depth": 0,
-          "source": "import $ from 'jquery';\nimport './style.css';\n\n// const btn = document.createElement('button');\n// btn.innerText = '点我';\n\n// btn.onclick = function() {\n//   import('./async').then(res => {\n//     console.log(res.default);\n//   });\n// };\n\n// document.body.append(btn);\n\nconst btn = $('<button>点我</button>');\nbtn.click(function() {\n  import('./async').then(res => {\n    console.log(res.default);\n  });\n});\n$('body').append(btn);\n"
-        },
-        {
-          "id": "./src/style.css",
-          "identifier": "/Users/xiebing/learn/share/html-webpack-plugin/node_modules/mini-css-extract-plugin/dist/loader.js!/Users/xiebing/learn/share/html-webpack-plugin/node_modules/css-loader/dist/cjs.js!/Users/xiebing/learn/share/html-webpack-plugin/src/style.css",
-          "name": "./src/style.css",
-          "index": 1,
-          "index2": 1,
-          "size": 39,
-          "cacheable": true,
-          "built": true,
-          "optional": false,
-          "prefetched": false,
-          "chunks": [
-            "main"
-          ],
-          "issuer": "/Users/xiebing/learn/share/html-webpack-plugin/src/index.js",
-          "issuerId": "./src/index.js",
-          "issuerName": "./src/index.js",
-          "issuerPath": [
-            {
-              "id": "./src/index.js",
-              "identifier": "/Users/xiebing/learn/share/html-webpack-plugin/src/index.js",
-              "name": "./src/index.js"
-            }
-          ],
-          "failed": false,
-          "errors": 0,
-          "warnings": 0,
-          "assets": [],
-          "reasons": [
-            {
-              "moduleId": "./src/index.js",
-              "moduleIdentifier": "/Users/xiebing/learn/share/html-webpack-plugin/src/index.js",
-              "module": "./src/index.js",
-              "moduleName": "./src/index.js",
-              "type": "harmony side effect evaluation",
-              "userRequest": "./style.css",
-              "loc": "2:0-21"
-            }
-          ],
           "providedExports": null,
           "optimizationBailout": [],
-          "depth": 1,
-          "source": "// extracted by mini-css-extract-plugin"
+          "depth": 0,
+          "source": "\nconst btn = document.createElement('button');\nbtn.innerText = '点我';\n\nbtn.onclick = function() {\n  import('./async').then(res => {\n    console.log(res.default);\n  });\n};\n\ndocument.body.append(btn);\n\n"
         }
       ],
       "filteredModules": 0,
@@ -328,55 +220,11 @@
   ],
   "modules": [
     {
-      "id": "",
-      "identifier": "css /Users/xiebing/learn/share/html-webpack-plugin/node_modules/css-loader/dist/cjs.js!/Users/xiebing/learn/share/html-webpack-plugin/src/style.css 0",
-      "name": "css ./node_modules/css-loader/dist/cjs.js!./src/style.css",
-      "index": 2,
-      "index2": 0,
-      "size": 34,
-      "built": false,
-      "optional": false,
-      "prefetched": false,
-      "chunks": [
-        "main"
-      ],
-      "issuer": "/Users/xiebing/learn/share/html-webpack-plugin/node_modules/mini-css-extract-plugin/dist/loader.js!/Users/xiebing/learn/share/html-webpack-plugin/node_modules/css-loader/dist/cjs.js!/Users/xiebing/learn/share/html-webpack-plugin/src/style.css",
-      "issuerId": "./src/style.css",
-      "issuerName": "./src/style.css",
-      "issuerPath": [
-        {
-          "id": "./src/index.js",
-          "identifier": "/Users/xiebing/learn/share/html-webpack-plugin/src/index.js",
-          "name": "./src/index.js"
-        },
-        {
-          "id": "./src/style.css",
-          "identifier": "/Users/xiebing/learn/share/html-webpack-plugin/node_modules/mini-css-extract-plugin/dist/loader.js!/Users/xiebing/learn/share/html-webpack-plugin/node_modules/css-loader/dist/cjs.js!/Users/xiebing/learn/share/html-webpack-plugin/src/style.css",
-          "name": "./src/style.css"
-        }
-      ],
-      "failed": false,
-      "errors": 0,
-      "warnings": 0,
-      "assets": [],
-      "reasons": [
-        {
-          "moduleId": "./src/style.css",
-          "moduleIdentifier": "/Users/xiebing/learn/share/html-webpack-plugin/node_modules/mini-css-extract-plugin/dist/loader.js!/Users/xiebing/learn/share/html-webpack-plugin/node_modules/css-loader/dist/cjs.js!/Users/xiebing/learn/share/html-webpack-plugin/src/style.css",
-          "module": "./src/style.css",
-          "moduleName": "./src/style.css"
-        }
-      ],
-      "providedExports": null,
-      "optimizationBailout": [],
-      "depth": 2
-    },
-    {
       "id": "./src/async.js",
       "identifier": "/Users/xiebing/learn/share/html-webpack-plugin/src/async.js",
       "name": "./src/async.js",
-      "index": 3,
-      "index2": 3,
+      "index": 1,
+      "index2": 1,
       "size": 24,
       "cacheable": true,
       "built": true,
@@ -407,7 +255,7 @@
           "moduleName": "./src/index.js",
           "type": "import()",
           "userRequest": "./async",
-          "loc": "17:2-19"
+          "loc": "6:2-19"
         }
       ],
       "providedExports": [
@@ -422,8 +270,8 @@
       "identifier": "/Users/xiebing/learn/share/html-webpack-plugin/src/index.js",
       "name": "./src/index.js",
       "index": 0,
-      "index2": 2,
-      "size": 435,
+      "index2": 0,
+      "size": 203,
       "cacheable": true,
       "built": true,
       "optional": false,
@@ -450,54 +298,10 @@
           "loc": "main"
         }
       ],
-      "providedExports": [],
-      "optimizationBailout": [],
-      "depth": 0,
-      "source": "import $ from 'jquery';\nimport './style.css';\n\n// const btn = document.createElement('button');\n// btn.innerText = '点我';\n\n// btn.onclick = function() {\n//   import('./async').then(res => {\n//     console.log(res.default);\n//   });\n// };\n\n// document.body.append(btn);\n\nconst btn = $('<button>点我</button>');\nbtn.click(function() {\n  import('./async').then(res => {\n    console.log(res.default);\n  });\n});\n$('body').append(btn);\n"
-    },
-    {
-      "id": "./src/style.css",
-      "identifier": "/Users/xiebing/learn/share/html-webpack-plugin/node_modules/mini-css-extract-plugin/dist/loader.js!/Users/xiebing/learn/share/html-webpack-plugin/node_modules/css-loader/dist/cjs.js!/Users/xiebing/learn/share/html-webpack-plugin/src/style.css",
-      "name": "./src/style.css",
-      "index": 1,
-      "index2": 1,
-      "size": 39,
-      "cacheable": true,
-      "built": true,
-      "optional": false,
-      "prefetched": false,
-      "chunks": [
-        "main"
-      ],
-      "issuer": "/Users/xiebing/learn/share/html-webpack-plugin/src/index.js",
-      "issuerId": "./src/index.js",
-      "issuerName": "./src/index.js",
-      "issuerPath": [
-        {
-          "id": "./src/index.js",
-          "identifier": "/Users/xiebing/learn/share/html-webpack-plugin/src/index.js",
-          "name": "./src/index.js"
-        }
-      ],
-      "failed": false,
-      "errors": 0,
-      "warnings": 0,
-      "assets": [],
-      "reasons": [
-        {
-          "moduleId": "./src/index.js",
-          "moduleIdentifier": "/Users/xiebing/learn/share/html-webpack-plugin/src/index.js",
-          "module": "./src/index.js",
-          "moduleName": "./src/index.js",
-          "type": "harmony side effect evaluation",
-          "userRequest": "./style.css",
-          "loc": "2:0-21"
-        }
-      ],
       "providedExports": null,
       "optimizationBailout": [],
-      "depth": 1,
-      "source": "// extracted by mini-css-extract-plugin"
+      "depth": 0,
+      "source": "\nconst btn = document.createElement('button');\nbtn.innerText = '点我';\n\nbtn.onclick = function() {\n  import('./async').then(res => {\n    console.log(res.default);\n  });\n};\n\ndocument.body.append(btn);\n\n"
     }
   ],
   "filteredModules": 0,
@@ -518,7 +322,7 @@
       "assets": [
         {
           "name": "index.html",
-          "size": 547026,
+          "size": 547215,
           "chunks": [
             0
           ],
@@ -558,12 +362,12 @@
           "rendered": true,
           "initial": true,
           "entry": true,
-          "size": 541930,
+          "size": 542086,
           "names": [],
           "files": [
             "index.html"
           ],
-          "hash": "b3fc96dc70f580821fc9",
+          "hash": "d70856f298511450a19f",
           "siblings": [],
           "parents": [],
           "children": [],
@@ -717,7 +521,7 @@
               "name": "./plugins/html-webpack-plugin/lib/loader.js!./index.html",
               "index": 0,
               "index2": 3,
-              "size": 449,
+              "size": 605,
               "cacheable": true,
               "built": true,
               "optional": false,
@@ -746,7 +550,7 @@
               "providedExports": null,
               "optimizationBailout": [],
               "depth": 0,
-              "source": "\n    var _ = require('!!lodash');\n    module.exports = function(data) {\nvar __t, __p = '', __e = _.escape;\n__p += '<!DOCTYPE html>\\n<html lang=\"en\">\\n\\n<head>\\n  <meta charset=\"UTF-8\">\\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\\n  <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">\\n  <title>hello word</title>\\n</head>\\n\\n<body>\\n  <div>哈哈</div>\\n  ' +\n__e( data.foo ) +\n'\\n</body>\\n\\n</html>';\nreturn __p\n}\n  "
+              "source": "\n    var _ = require('!!lodash');\n    // 如果不使用 NodeTargetPlugin 那么就会抛出Cannot find module 'fs'\"的错误\n    // var fs = require('fs');\n    // console.log(fs.readFile);\n    module.exports = function(data) {\nvar __t, __p = '', __e = _.escape;\n__p += '<!DOCTYPE html>\\n<html lang=\"en\">\\n\\n<head>\\n  <meta charset=\"UTF-8\">\\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\\n  <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">\\n  <title>hello word</title>\\n</head>\\n\\n<body>\\n  <div>哈哈</div>\\n  ' +\n__e( data.foo ) +\n'\\n</body>\\n\\n</html>';\nreturn __p\n}\n  "
             }
           ],
           "filteredModules": 0,
@@ -911,7 +715,7 @@
           "name": "./plugins/html-webpack-plugin/lib/loader.js!./index.html",
           "index": 0,
           "index2": 3,
-          "size": 449,
+          "size": 605,
           "cacheable": true,
           "built": true,
           "optional": false,
@@ -940,7 +744,7 @@
           "providedExports": null,
           "optimizationBailout": [],
           "depth": 0,
-          "source": "\n    var _ = require('!!lodash');\n    module.exports = function(data) {\nvar __t, __p = '', __e = _.escape;\n__p += '<!DOCTYPE html>\\n<html lang=\"en\">\\n\\n<head>\\n  <meta charset=\"UTF-8\">\\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\\n  <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">\\n  <title>hello word</title>\\n</head>\\n\\n<body>\\n  <div>哈哈</div>\\n  ' +\n__e( data.foo ) +\n'\\n</body>\\n\\n</html>';\nreturn __p\n}\n  "
+          "source": "\n    var _ = require('!!lodash');\n    // 如果不使用 NodeTargetPlugin 那么就会抛出Cannot find module 'fs'\"的错误\n    // var fs = require('fs');\n    // console.log(fs.readFile);\n    module.exports = function(data) {\nvar __t, __p = '', __e = _.escape;\n__p += '<!DOCTYPE html>\\n<html lang=\"en\">\\n\\n<head>\\n  <meta charset=\"UTF-8\">\\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\\n  <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">\\n  <title>hello word</title>\\n</head>\\n\\n<body>\\n  <div>哈哈</div>\\n  ' +\n__e( data.foo ) +\n'\\n</body>\\n\\n</html>';\nreturn __p\n}\n  "
         }
       ],
       "filteredModules": 0,
@@ -953,248 +757,6 @@
       },
       "children": [],
       "name": "html-webpack-plugin for \"index.html\""
-    },
-    {
-      "errors": [],
-      "warnings": [],
-      "publicPath": "",
-      "outputPath": "/Users/xiebing/learn/share/html-webpack-plugin/dist",
-      "assetsByChunkName": {},
-      "assets": [],
-      "filteredAssets": 0,
-      "entrypoints": {
-        "mini-css-extract-plugin": {
-          "chunks": [
-            "mini-css-extract-plugin"
-          ],
-          "assets": [
-            "*"
-          ],
-          "children": {},
-          "childAssets": {}
-        }
-      },
-      "namedChunkGroups": {
-        "mini-css-extract-plugin": {
-          "chunks": [
-            "mini-css-extract-plugin"
-          ],
-          "assets": [
-            "*"
-          ],
-          "children": {},
-          "childAssets": {}
-        }
-      },
-      "chunks": [
-        {
-          "id": "mini-css-extract-plugin",
-          "rendered": true,
-          "initial": true,
-          "entry": true,
-          "size": 2353,
-          "names": [
-            "mini-css-extract-plugin"
-          ],
-          "files": [
-            "*"
-          ],
-          "hash": "c424c9568f90b24af8b8",
-          "siblings": [],
-          "parents": [],
-          "children": [],
-          "childrenByOrder": {},
-          "modules": [
-            {
-              "id": "./node_modules/css-loader/dist/cjs.js!./src/style.css",
-              "identifier": "/Users/xiebing/learn/share/html-webpack-plugin/node_modules/css-loader/dist/cjs.js!/Users/xiebing/learn/share/html-webpack-plugin/src/style.css",
-              "name": "./node_modules/css-loader/dist/cjs.js!./src/style.css",
-              "index": 0,
-              "index2": 1,
-              "size": 269,
-              "cacheable": true,
-              "built": true,
-              "optional": false,
-              "prefetched": false,
-              "chunks": [
-                "mini-css-extract-plugin"
-              ],
-              "issuer": null,
-              "issuerId": null,
-              "issuerName": null,
-              "issuerPath": null,
-              "failed": false,
-              "errors": 0,
-              "warnings": 0,
-              "assets": [],
-              "reasons": [
-                {
-                  "moduleId": null,
-                  "moduleIdentifier": null,
-                  "module": null,
-                  "moduleName": null,
-                  "type": "single entry",
-                  "userRequest": "!!/Users/xiebing/learn/share/html-webpack-plugin/node_modules/css-loader/dist/cjs.js!/Users/xiebing/learn/share/html-webpack-plugin/src/style.css",
-                  "loc": "mini-css-extract-plugin"
-                }
-              ],
-              "providedExports": null,
-              "optimizationBailout": [],
-              "depth": 0,
-              "source": "// Imports\nvar ___CSS_LOADER_API_IMPORT___ = require(\"../node_modules/css-loader/dist/runtime/api.js\");\nexports = ___CSS_LOADER_API_IMPORT___(false);\n// Module\nexports.push([module.id, \"body {\\n  background-color: red;\\n}\\n\", \"\"]);\n// Exports\nmodule.exports = exports;\n"
-            },
-            {
-              "id": "./node_modules/css-loader/dist/runtime/api.js",
-              "identifier": "/Users/xiebing/learn/share/html-webpack-plugin/node_modules/css-loader/dist/runtime/api.js",
-              "name": "./node_modules/css-loader/dist/runtime/api.js",
-              "index": 1,
-              "index2": 0,
-              "size": 2084,
-              "cacheable": true,
-              "built": true,
-              "optional": false,
-              "prefetched": false,
-              "chunks": [
-                "mini-css-extract-plugin"
-              ],
-              "issuer": "/Users/xiebing/learn/share/html-webpack-plugin/node_modules/css-loader/dist/cjs.js!/Users/xiebing/learn/share/html-webpack-plugin/src/style.css",
-              "issuerId": "./node_modules/css-loader/dist/cjs.js!./src/style.css",
-              "issuerName": "./node_modules/css-loader/dist/cjs.js!./src/style.css",
-              "issuerPath": [
-                {
-                  "id": "./node_modules/css-loader/dist/cjs.js!./src/style.css",
-                  "identifier": "/Users/xiebing/learn/share/html-webpack-plugin/node_modules/css-loader/dist/cjs.js!/Users/xiebing/learn/share/html-webpack-plugin/src/style.css",
-                  "name": "./node_modules/css-loader/dist/cjs.js!./src/style.css"
-                }
-              ],
-              "failed": false,
-              "errors": 0,
-              "warnings": 0,
-              "assets": [],
-              "reasons": [
-                {
-                  "moduleId": "./node_modules/css-loader/dist/cjs.js!./src/style.css",
-                  "moduleIdentifier": "/Users/xiebing/learn/share/html-webpack-plugin/node_modules/css-loader/dist/cjs.js!/Users/xiebing/learn/share/html-webpack-plugin/src/style.css",
-                  "module": "./node_modules/css-loader/dist/cjs.js!./src/style.css",
-                  "moduleName": "./node_modules/css-loader/dist/cjs.js!./src/style.css",
-                  "type": "cjs require",
-                  "userRequest": "../node_modules/css-loader/dist/runtime/api.js",
-                  "loc": "2:34-91"
-                }
-              ],
-              "providedExports": null,
-              "optimizationBailout": [],
-              "depth": 1,
-              "source": "\"use strict\";\n\n/*\n  MIT License http://www.opensource.org/licenses/mit-license.php\n  Author Tobias Koppers @sokra\n*/\n// css base code, injected by the css-loader\n// eslint-disable-next-line func-names\nmodule.exports = function (useSourceMap) {\n  var list = []; // return the list of modules as css string\n\n  list.toString = function toString() {\n    return this.map(function (item) {\n      var content = cssWithMappingToString(item, useSourceMap);\n\n      if (item[2]) {\n        return \"@media \".concat(item[2], \" {\").concat(content, \"}\");\n      }\n\n      return content;\n    }).join('');\n  }; // import a list of modules into the list\n  // eslint-disable-next-line func-names\n\n\n  list.i = function (modules, mediaQuery) {\n    if (typeof modules === 'string') {\n      // eslint-disable-next-line no-param-reassign\n      modules = [[null, modules, '']];\n    }\n\n    for (var i = 0; i < modules.length; i++) {\n      var item = [].concat(modules[i]);\n\n      if (mediaQuery) {\n        if (!item[2]) {\n          item[2] = mediaQuery;\n        } else {\n          item[2] = \"\".concat(mediaQuery, \" and \").concat(item[2]);\n        }\n      }\n\n      list.push(item);\n    }\n  };\n\n  return list;\n};\n\nfunction cssWithMappingToString(item, useSourceMap) {\n  var content = item[1] || ''; // eslint-disable-next-line prefer-destructuring\n\n  var cssMapping = item[3];\n\n  if (!cssMapping) {\n    return content;\n  }\n\n  if (useSourceMap && typeof btoa === 'function') {\n    var sourceMapping = toComment(cssMapping);\n    var sourceURLs = cssMapping.sources.map(function (source) {\n      return \"/*# sourceURL=\".concat(cssMapping.sourceRoot).concat(source, \" */\");\n    });\n    return [content].concat(sourceURLs).concat([sourceMapping]).join('\\n');\n  }\n\n  return [content].join('\\n');\n} // Adapted from convert-source-map (MIT)\n\n\nfunction toComment(sourceMap) {\n  // eslint-disable-next-line no-undef\n  var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));\n  var data = \"sourceMappingURL=data:application/json;charset=utf-8;base64,\".concat(base64);\n  return \"/*# \".concat(data, \" */\");\n}"
-            }
-          ],
-          "filteredModules": 0,
-          "origins": [
-            {
-              "module": "",
-              "moduleIdentifier": "",
-              "moduleName": "",
-              "loc": "mini-css-extract-plugin",
-              "request": "!!/Users/xiebing/learn/share/html-webpack-plugin/node_modules/css-loader/dist/cjs.js!/Users/xiebing/learn/share/html-webpack-plugin/src/style.css",
-              "reasons": []
-            }
-          ]
-        }
-      ],
-      "modules": [
-        {
-          "id": "./node_modules/css-loader/dist/cjs.js!./src/style.css",
-          "identifier": "/Users/xiebing/learn/share/html-webpack-plugin/node_modules/css-loader/dist/cjs.js!/Users/xiebing/learn/share/html-webpack-plugin/src/style.css",
-          "name": "./node_modules/css-loader/dist/cjs.js!./src/style.css",
-          "index": 0,
-          "index2": 1,
-          "size": 269,
-          "cacheable": true,
-          "built": true,
-          "optional": false,
-          "prefetched": false,
-          "chunks": [
-            "mini-css-extract-plugin"
-          ],
-          "issuer": null,
-          "issuerId": null,
-          "issuerName": null,
-          "issuerPath": null,
-          "failed": false,
-          "errors": 0,
-          "warnings": 0,
-          "assets": [],
-          "reasons": [
-            {
-              "moduleId": null,
-              "moduleIdentifier": null,
-              "module": null,
-              "moduleName": null,
-              "type": "single entry",
-              "userRequest": "!!/Users/xiebing/learn/share/html-webpack-plugin/node_modules/css-loader/dist/cjs.js!/Users/xiebing/learn/share/html-webpack-plugin/src/style.css",
-              "loc": "mini-css-extract-plugin"
-            }
-          ],
-          "providedExports": null,
-          "optimizationBailout": [],
-          "depth": 0,
-          "source": "// Imports\nvar ___CSS_LOADER_API_IMPORT___ = require(\"../node_modules/css-loader/dist/runtime/api.js\");\nexports = ___CSS_LOADER_API_IMPORT___(false);\n// Module\nexports.push([module.id, \"body {\\n  background-color: red;\\n}\\n\", \"\"]);\n// Exports\nmodule.exports = exports;\n"
-        },
-        {
-          "id": "./node_modules/css-loader/dist/runtime/api.js",
-          "identifier": "/Users/xiebing/learn/share/html-webpack-plugin/node_modules/css-loader/dist/runtime/api.js",
-          "name": "./node_modules/css-loader/dist/runtime/api.js",
-          "index": 1,
-          "index2": 0,
-          "size": 2084,
-          "cacheable": true,
-          "built": true,
-          "optional": false,
-          "prefetched": false,
-          "chunks": [
-            "mini-css-extract-plugin"
-          ],
-          "issuer": "/Users/xiebing/learn/share/html-webpack-plugin/node_modules/css-loader/dist/cjs.js!/Users/xiebing/learn/share/html-webpack-plugin/src/style.css",
-          "issuerId": "./node_modules/css-loader/dist/cjs.js!./src/style.css",
-          "issuerName": "./node_modules/css-loader/dist/cjs.js!./src/style.css",
-          "issuerPath": [
-            {
-              "id": "./node_modules/css-loader/dist/cjs.js!./src/style.css",
-              "identifier": "/Users/xiebing/learn/share/html-webpack-plugin/node_modules/css-loader/dist/cjs.js!/Users/xiebing/learn/share/html-webpack-plugin/src/style.css",
-              "name": "./node_modules/css-loader/dist/cjs.js!./src/style.css"
-            }
-          ],
-          "failed": false,
-          "errors": 0,
-          "warnings": 0,
-          "assets": [],
-          "reasons": [
-            {
-              "moduleId": "./node_modules/css-loader/dist/cjs.js!./src/style.css",
-              "moduleIdentifier": "/Users/xiebing/learn/share/html-webpack-plugin/node_modules/css-loader/dist/cjs.js!/Users/xiebing/learn/share/html-webpack-plugin/src/style.css",
-              "module": "./node_modules/css-loader/dist/cjs.js!./src/style.css",
-              "moduleName": "./node_modules/css-loader/dist/cjs.js!./src/style.css",
-              "type": "cjs require",
-              "userRequest": "../node_modules/css-loader/dist/runtime/api.js",
-              "loc": "2:34-91"
-            }
-          ],
-          "providedExports": null,
-          "optimizationBailout": [],
-          "depth": 1,
-          "source": "\"use strict\";\n\n/*\n  MIT License http://www.opensource.org/licenses/mit-license.php\n  Author Tobias Koppers @sokra\n*/\n// css base code, injected by the css-loader\n// eslint-disable-next-line func-names\nmodule.exports = function (useSourceMap) {\n  var list = []; // return the list of modules as css string\n\n  list.toString = function toString() {\n    return this.map(function (item) {\n      var content = cssWithMappingToString(item, useSourceMap);\n\n      if (item[2]) {\n        return \"@media \".concat(item[2], \" {\").concat(content, \"}\");\n      }\n\n      return content;\n    }).join('');\n  }; // import a list of modules into the list\n  // eslint-disable-next-line func-names\n\n\n  list.i = function (modules, mediaQuery) {\n    if (typeof modules === 'string') {\n      // eslint-disable-next-line no-param-reassign\n      modules = [[null, modules, '']];\n    }\n\n    for (var i = 0; i < modules.length; i++) {\n      var item = [].concat(modules[i]);\n\n      if (mediaQuery) {\n        if (!item[2]) {\n          item[2] = mediaQuery;\n        } else {\n          item[2] = \"\".concat(mediaQuery, \" and \").concat(item[2]);\n        }\n      }\n\n      list.push(item);\n    }\n  };\n\n  return list;\n};\n\nfunction cssWithMappingToString(item, useSourceMap) {\n  var content = item[1] || ''; // eslint-disable-next-line prefer-destructuring\n\n  var cssMapping = item[3];\n\n  if (!cssMapping) {\n    return content;\n  }\n\n  if (useSourceMap && typeof btoa === 'function') {\n    var sourceMapping = toComment(cssMapping);\n    var sourceURLs = cssMapping.sources.map(function (source) {\n      return \"/*# sourceURL=\".concat(cssMapping.sourceRoot).concat(source, \" */\");\n    });\n    return [content].concat(sourceURLs).concat([sourceMapping]).join('\\n');\n  }\n\n  return [content].join('\\n');\n} // Adapted from convert-source-map (MIT)\n\n\nfunction toComment(sourceMap) {\n  // eslint-disable-next-line no-undef\n  var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));\n  var data = \"sourceMappingURL=data:application/json;charset=utf-8;base64,\".concat(base64);\n  return \"/*# \".concat(data, \" */\");\n}"
-        }
-      ],
-      "filteredModules": 0,
-      "logging": {
-        "webpack.buildChunkGraph.visitModules": {
-          "entries": [],
-          "filteredEntries": 2,
-          "debug": false
-        }
-      },
-      "children": [],
-      "name": "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js!src/style.css"
     }
   ]
 }
