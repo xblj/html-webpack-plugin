@@ -205,21 +205,35 @@
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+!(function webpackMissingModule() { var e = new Error("Cannot find module 'jquery'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+// const btn = document.createElement('button');
+// btn.innerText = '点我';
+
+// btn.onclick = function() {
+//   import('./async').then(res => {
+//     const div = document.createElement('div');
+//     div.innerText = res.default;
+//     document.body.append(div);
+//   });
+// };
+
+// document.body.append(btn);
 
 
-const btn = document.createElement('button');
-btn.innerText = '点我';
 
-btn.onclick = function() {
+const btn = !(function webpackMissingModule() { var e = new Error("Cannot find module 'jquery'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())('<button>点我</button>');
+btn.click(() => {
   __webpack_require__.e(/*! import() */ 0).then(__webpack_require__.bind(null, /*! ./async */ "./src/async.js")).then(res => {
-    console.log(res.default);
+    const div = !(function webpackMissingModule() { var e = new Error("Cannot find module 'jquery'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())(`<div>${res.default}</div>`);
+    !(function webpackMissingModule() { var e = new Error("Cannot find module 'jquery'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())(document.body).append(div);
   });
-};
-
-document.body.append(btn);
-
+});
+!(function webpackMissingModule() { var e = new Error("Cannot find module 'jquery'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())(document.body).append(btn);
 
 
 /***/ })

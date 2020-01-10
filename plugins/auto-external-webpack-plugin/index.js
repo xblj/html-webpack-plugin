@@ -37,14 +37,14 @@ class AutoExternalWebpackPlugin {
               selfClose: false,
               attributes: {
                 type: 'text/javascript',
-                src: options[key].src,
-              },
+                src: options[key].src
+              }
             };
           });
 
           return {
             ...assetsTags,
-            body: [...objArr, ...assetsTags.body],
+            body: [...objArr, ...assetsTags.body]
           };
         }
       );

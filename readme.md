@@ -37,12 +37,12 @@ webpack 的插件都是基于`tapable`实现的
     - 串行`series`
     - 并行`parallel`
 
-  | 类型 | 说明 |
-  | --- | --- |
-  | Basic | 不关心监听函数的返回值 |
-  | Bail | 监听的函数有返回值则不会再调用后续的监听函数 |
-  | Waterfall | 上一个监听函数的返回值会交给下一个监听函数 |
-  | Loop | 如果监听函数返回`true`则这个监听函数会反复执行，直到返回 undefined |
+  | 类型      | 说明                                                             |
+  | --------- | ---------------------------------------------------------------- |
+  | Basic     | 不关心监听函数的返回值                                           |
+  | Bail      | 监听的函数有返回值则不会再调用后续的监听函数                     |
+  | Waterfall | 上一个监听函数的返回值会交给下一个监听函数                       |
+  | Loop      | 如果监听函数有返回值则这个监听函数会反复执行，直到返回 undefined |
 
   ![所有钩子](./images/tapable.jpg)
 
@@ -83,6 +83,14 @@ webpack 的插件都是基于`tapable`实现的
 | chunks  | 记录了所有 chunk       |
 | assets  | 记录了所有要生成的文件 |
 
+## compiler 对象
+
+`webpack` 运行实例，整个构建流程只会实例化一次，它会创建 `Compilation` 对象，我们写插件主要就是接受这个对象，对这个对象上的属性进行操作
+
+## compilation 对象
+
+由 `compiler` 创建，每次修改文件都会去创建一个全新的`compilation`，开始一轮新的编译过程，主要模块
+
 ## 实现 html-webpack-plugin
 
 本实现借鉴[https://github.com/jantimon/html-webpack-plugin](https://github.com/jantimon/html-webpack-plugin)的实现思路，并未完全按照前者实现，也不试用与生产环境，仅仅只为了学习 webpack 插件。
@@ -98,7 +106,7 @@ webpack 的插件都是基于`tapable`实现的
    compilation.assets['index.html'] = {
      // content表示index.html文件内容
      source: () => content,
-     size: () => content.length,
+     size: () => content.length
    };
    ```
 
@@ -113,7 +121,7 @@ webpack 的插件都是基于`tapable`实现的
          compilation.assets['index.html'] = {
            // content表示index.html文件内容
            source: () => content,
-           size: () => content.length,
+           size: () => content.length
          };
        });
      }
@@ -136,7 +144,7 @@ webpack 的插件都是基于`tapable`实现的
          compilation.assets['index.html'] = {
            // content表示index.html文件内容
            source: () => content,
-           size: () => content.length,
+           size: () => content.length
          };
        });
      }
@@ -162,7 +170,7 @@ webpack 的插件都是基于`tapable`实现的
          compilation.assets['index.html'] = {
            // content表示index.html文件内容
            source: () => content,
-           size: () => content.length,
+           size: () => content.length
          };
        });
      }

@@ -1,12 +1,23 @@
+// const btn = document.createElement('button');
+// btn.innerText = '点我';
 
-const btn = document.createElement('button');
-btn.innerText = '点我';
+// btn.onclick = function() {
+//   import('./async').then(res => {
+//     const div = document.createElement('div');
+//     div.innerText = res.default;
+//     document.body.append(div);
+//   });
+// };
 
-btn.onclick = function() {
+// document.body.append(btn);
+
+import $ from 'jquery';
+
+const btn = $('<button>点我</button>');
+btn.click(() => {
   import('./async').then(res => {
-    console.log(res.default);
+    const div = $(`<div>${res.default}</div>`);
+    $(document.body).append(div);
   });
-};
-
-document.body.append(btn);
-
+});
+$(document.body).append(btn);
