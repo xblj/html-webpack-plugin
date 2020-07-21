@@ -81,7 +81,7 @@
     "@typescript-eslint/parser": "1.10.2",
     "babel-preset-env": "1.7.0",
     "babel-preset-jest": "24.6.0",
-    "codecov": "3.5.0",
+    "codecov": "3.7.1",
     "commitizen": "4.0.3",
     "commitlint": "^8.1.0",
     "commitlint-config-cz": "0.12.0",
